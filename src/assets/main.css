@@ -29,11 +29,28 @@ a,
   }
 }
 
-td {
-  padding-left: 5px;
-  padding-right: 5px;
+td, th {
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 3px;
+  padding-bottom: 3px;
 }
 
 h3 {
   margin-top: 15px;
+}
+
+table {
+  thead {
+    background-color: rgb(28, 86, 130);
+  }
+  caption {
+    background-color: rgb(28, 86, 130);
+  }
+  border-collapse: collapse;
+  border-radius: 10px;
+}
+
+tbody {
+  background-color: rgb(39, 123, 185)
 }
