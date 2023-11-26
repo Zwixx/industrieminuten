@@ -8,19 +8,6 @@
   font-weight: normal;
 }
 
-a,
-.green {
-  text-decoration: none;
-  color: hsla(160, 100%, 37%, 1);
-  transition: 0.4s;
-}
-
-@media (hover: hover) {
-  a:hover {
-    background-color: hsla(160, 100%, 37%, 0.2);
-  }
-}
-
 @media (min-width: 1024px) {
   #app {
     display: grid;
@@ -29,28 +16,23 @@ a,
   }
 }
 
-td, th {
-  padding-left: 10px;
-  padding-right: 10px;
-  padding-top: 3px;
-  padding-bottom: 3px;
-}
-
-h3 {
-  margin-top: 15px;
-}
-
 table {
+  caption {
+    background-color: rgb(28, 86, 130);
+  }
   thead {
     background-color: rgb(28, 86, 130);
   }
-  caption {
-    background-color: rgb(28, 86, 130);
+  tbody {
+    background-color: rgb(39, 123, 185)
+  }
+  td, th {
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 3px;
+    padding-bottom: 3px;
   }
   border-collapse: collapse;
   border-radius: 10px;
 }
 
-tbody {
-  background-color: rgb(39, 123, 185)
-}
