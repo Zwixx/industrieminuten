@@ -27,7 +27,13 @@
 </template>
 
 <script lang="ts">
+import { convertToTime } from './js/functions'
 import Zeitzeile from './components/Zeitzeile.vue';
+
+function sum(thys : any) {
+  let text = (thys.total1 + thys.total2 + thys.total3 + thys.total4 + thys.total5 + thys.total6 + thys.total7);
+  thys.total = text.toFixed(2) + " / " + convertToTime(text);
+}
 
 export default {
   components: {
@@ -48,32 +54,31 @@ export default {
   methods: {
     updateStunden1(value : number) {
       this.total1 = value;
-      this.total = (this.total1 + this.total2 + this.total3 + this.total4 + this.total5 + this.total6 + this.total7).toFixed(2);
-      console.log(this.total)
+      sum(this);
     },
     updateStunden2(value : number) {
       this.total2 = value;
-      this.total = (this.total1 + this.total2 + this.total3 + this.total4 + this.total5 + this.total6 + this.total7).toFixed(2);
+      sum(this);
     },
     updateStunden3(value : number) {
       this.total3 = value;
-      this.total = (this.total1 + this.total2 + this.total3 + this.total4 + this.total5 + this.total6 + this.total7).toFixed(2);
+      sum(this);
     },
     updateStunden4(value : number) {
       this.total4 = value;
-      this.total = (this.total1 + this.total2 + this.total3 + this.total4 + this.total5 + this.total6 + this.total7).toFixed(2);
+      sum(this);
     },
     updateStunden5(value : number) {
       this.total5 = value;
-      this.total = (this.total1 + this.total2 + this.total3 + this.total4 + this.total5 + this.total6 + this.total7).toFixed(2);
+      sum(this);
     },
     updateStunden6(value : number) {
       this.total6 = value;
-      this.total = (this.total1 + this.total2 + this.total3 + this.total4 + this.total5 + this.total6 + this.total7).toFixed(2);
+      sum(this);
     },
     updateStunden7(value : number) {
       this.total7 = value;
-      this.total = (this.total1 + this.total2 + this.total3 + this.total4 + this.total5 + this.total6 + this.total7).toFixed(2);
+      sum(this);
     },
   }
 };
