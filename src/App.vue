@@ -23,12 +23,29 @@
         <tr><td colspan="4" align="right">Summe:</td><td>{{ total }}</td></tr>
       </tbody>
     </table>
+    <table>
+      <caption>Industriestundenumrechnung</caption>
+      <thead>
+        <tr>
+          <th>Dezimal</th>
+          <th>Uhrzeit</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td style="text-align: center;"><InputNumber class="ZeitzeileEdit" v-model="decimal" :minFractionDigits="2" @input="updateValueDec($event.value)" /></td>
+          <td style="text-align: center;">{{ uhrzeit }}</td>
+        </tr>
+      </tbody>
+    </table>
   </main>
 </template>
 
 <script lang="ts">
-import { convertToTime } from './js/functions'
+import { convertToTime } from './js/functions';
+import InputNumber from 'primevue/inputnumber';
 import Zeitzeile from './components/Zeitzeile.vue';
+
 
 function sum(thys : any) {
   let text = (thys.total1 + thys.total2 + thys.total3 + thys.total4 + thys.total5 + thys.total6 + thys.total7);
@@ -37,7 +54,8 @@ function sum(thys : any) {
 
 export default {
   components: {
-    Zeitzeile
+    Zeitzeile,
+    InputNumber
   },
   data() {
     return {
@@ -49,6 +67,8 @@ export default {
       total6: 0,
       total7: 0,
       total: "",
+      decimal: 0,
+      uhrzeit: ""
     };
   },
   methods: {
@@ -80,6 +100,9 @@ export default {
       this.total7 = value;
       sum(this);
     },
+    updateValueDec(value : any) {
+      this.uhrzeit = convertToTime(value.toLocaleString('en-US', {minimumFractionDigits: 2}));
+    }
   }
 };
 </script>
